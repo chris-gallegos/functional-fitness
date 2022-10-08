@@ -1,3 +1,16 @@
 <%- include('../partials/header') %>
 
 <h1>Explore all Workouts!</h1>
+
+<table>
+     <% workouts.forEach(function(w) { %>
+       <tr>
+         <td><%= w.title %></td>
+         <td><%= w.about %></td>
+         <td><a href="/workouts/<%= w._id %>">More info</a></td>
+       </tr>
+       <% }) %>
+   </tbody>
+ </table>
+
+</div>

@@ -5,10 +5,10 @@ const Schema = mongoose.Schema;
 const workoutSchema = new Schema ({
     title: String,
     about: String,
-    wotkoutDetails: String,
+    workoutDetails: String,
     difficulyLevel: { 
         type: String,
-        enum: ['easy', 'meduim', 'hard']
+        enum: ['easy', 'medium', 'hard']
     }
 });
 

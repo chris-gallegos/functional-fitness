@@ -9,11 +9,13 @@
 </head>
 <body>
   <nav>
-    
-        <a href="/logout">Log out</a>
-   
+    <% if (user) { %>
+       <a href="/logout">LOG OUT</a>
+       <% } else { %>
+        <a href="/auth/google" class="login">Sign up&nbsp;</a>
         <a href="/auth/google" class="login">Log in&nbsp;</a>
-   
+        <% } %>
+
   </nav>
   
   

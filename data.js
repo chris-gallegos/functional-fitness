@@ -1,0 +1,18 @@
+exports.workouts = [
+    {title: 'Killer Ab Workout', 
+    about: 'Like any other muscle in your body, you need to train your core for it to grow and get stronger', 
+    workoutDetails: '50 crunches, 75 sit-ups and 15 ab rollers. 5 sets.', 
+    difficulyLevel: 'medium' },
+    {title: 'Push Day Workout', 
+    about: 'This is a great Chest, Shoulder and Triceps workout to try out on your next push day at the gym', 
+    workoutDetails: 'Bench Press, 4 sets. DB Shoulder Press, 3 sets. Triceps pulldown, 3 sets. Chest cable fly, 3 sets. Pushups till your arms fall off, ulmimited sets.', 
+    difficulyLevel: 'hard' },
+    {title: 'HIIT Workout that will make you cry', 
+    about: 'Are you up for a challenge? Try this intense HIIT workout that will leave you on the floor', 
+    workoutDetails: '25 burpees, 30 seconds rest. 200 jumps with jump rope, 30 seconds rest. 20 pullups, 1 minute rest. Body squats, 2 minutes. Repeat the whole thing for 3 sets.', 
+    difficulyLevel: 'hard' },
+    {title: 'Simple, Effective Home Workout', 
+    about: 'A great home workout to get you moving', 
+    workoutDetails: '10 pushups, 15 jumping jacks and a walk ouside. Feel free to repeat as needed.', 
+    difficulyLevel: 'easy' },
+]
