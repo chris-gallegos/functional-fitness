@@ -10,3 +10,12 @@
     <div>Difficulty: </div>
     <div><%= workout.difficulyLevel%></div>
   </section>
+
+  <br><h2>Comment Section</h2>
+  <form id="add-comment-form" method="POST"
+    action="/workouts/<%= workout._id %>/comments">
+    <label>Add a Comment
+        <input type="text">
+        <input type="submit" value="Post">
+    </label>
+ </form>
