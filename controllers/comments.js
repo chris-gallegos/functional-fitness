@@ -40,11 +40,11 @@ function edit(req, res) {
 }
   
 function update(req, res) {
-    Workout.findOne({'comments._id': req.params.id}, function(err, book) {
+    Workout.findOne({'comments._id': req.params.id}, function(err, workout) {
      const commentSubdoc = workout.comments.id(req.params.id); 
-     if (!commentSubdoc.user.equals(req.user._id) ) //ID is undifed? Debug
+     if (!commentSubdoc.user.equals(req.user._id) ) 
      return res.redirect(`/workouts/${workout._id}`);
-     commentSubdoc.text = req.body.text;
+     commentSubdoc.content = req.body.text
      workout.save(function(err) {
       res.redirect(`/workouts/${workout._id}`);
     });

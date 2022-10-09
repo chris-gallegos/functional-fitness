@@ -16,6 +16,7 @@ function index(req, res) {
 
 function show(req, res){
     Workout.findById(req.params.id, function(err, workout) {
+        console.log(workout)
         res.render('workouts/show', {title: 'Workout', workout})
     })
 }
