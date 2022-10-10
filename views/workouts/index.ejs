@@ -6,6 +6,7 @@
      <% workouts.forEach(function(w) { %>
        <tr>
          <td><%= w.title %></td>
+         <td><img src="<%= w.url %>" width="30%" height="20%"></td>
          <td><%= w.about %></td>
          <td><a href="/workouts/<%= w._id %>">More info</a></td>
        </tr>
@@ -14,3 +15,5 @@
  </table>
 
 </div>
+
+<%- include('../partials/footer') %>

@@ -3,6 +3,7 @@
 <section id="show-page">
     <div>Workout Name </div>
     <div><%= workout.title %></div>
+    <div><img src="<%= workout.url %>" width="40%" height="30%"></div>
     <div>About: </div>
     <div><%= workout.about %></div>
     <div>The Workout Plan: </div>
@@ -58,3 +59,5 @@
 <% } else { %>
   <h5>No Comments Yet</h5>
 <% } %>
+
+<%- include('../partials/footer') %>

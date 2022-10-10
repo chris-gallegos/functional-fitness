@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+require('mongoose-type-url');
 // optional shortcut variable
 const Schema = mongoose.Schema;
 
@@ -15,6 +16,19 @@ const commentsSchema = new Schema({
 
 const workoutSchema = new Schema ({
     title: String,
+    url: [
+        {
+            type: String,
+            validate: {
+                validator: function (value) {
+                    const urlPattern = /(http|https):\/\/(\w+:{0,1}\w*#)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%#!\-/]))?/;
+                    const urlRegExp = new RegExp(urlPattern);
+                    return value.match(urlRegExp);
+            },
+                message: props => `${props.value} is not a valid URL`
+            }
+        }
+    ],
     about: String,
     workoutDetails: String,
     difficulyLevel: { 
@@ -23,7 +37,6 @@ const workoutSchema = new Schema ({
     },
     comments: [commentsSchema]
 });
-
 
 
 module.exports = mongoose.model('Workout', workoutSchema);
