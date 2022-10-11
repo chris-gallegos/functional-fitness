@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
 
-<div id="showing">
- <form id="new-form" action="/workouts" method="POST">
+
+   <form id="new-form" action="/workouts" method="POST">
      <label>Workout Title:</label>
      <input type="text" name="title">
      <br>
@@ -21,7 +21,7 @@
              <option value="hard">HARD</option>
          </select>
      </label><br>
-     <input type="submit" value="Add Workout">
+     <input id="buttonC" type="submit" value="Add Workout">
    </form>
-</div>
+
   <%- include('../partials/footer') %>

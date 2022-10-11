@@ -1,13 +1,13 @@
 <%- include('../partials/header') %>
 <div id="showing">
   <section id="show-page">
-      <div class="name">Workout Name </div>
+      <div class="name">Workout</div>
       <div class="name"><%= workout.title %></div>
       <div><img src="<%= workout.url %>" height="700px" width="700px"></div>
       <div class="about">About:</div>
       <div><%= workout.about %></div>
       <div class="plan">The Workout Plan: </div>
-      <div><%= workout.workoutDetails %></div>
+      <div class="plan2"><%= workout.workoutDetails %></div>
       <div class="diff">Difficulty: </div>
       <div class="diff2"><%= workout.difficulyLevel%></div>
   </section>
@@ -20,43 +20,42 @@
       <form id="add-comment-form" method="POST" action="/workouts/<%= workout._id %>/comments">
         <label>Comment:</label>
         <textarea name="content"></textarea>
-        <input type="submit" value="Add Comment">
+        <input id="buttonD" type="submit" value="Add Comment">
       </form>
     <% } %>
-      
-    <% if (workout.comments.length) { %>
-      <table>
-        <thead>
-          <tr>
-            <th>User</th>
-            <th>Comment</th>
-            <th>Date</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <% workout.comments.forEach(function(c) { %>
-            <tr>
-              <td class="comment-user"><img alt="avatar" src="<%= c.userAvatar %>" referrerpolicy="no-referrer" ><%= c.userName %></td>
-              <td><%= c.content %></td>
-              <td><%= c.createdAt.toLocaleDateString() %></td>
-              <td>
-                <% if (user && user._id.equals(c.user)) { %>
-                  <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
-                    <button type="submit">X</button>
-                  </form>
-                  <br>
-                  <form action="/comments/<%= c._id %>?_method=PUT" method="POST">
-                    <input name="text" value="<%= c.text %>">
-                    <button type="submit">Edit Comment</button>
-                  </form>
-                <% } %>
-              </td>
-            </tr>
-          <% }); %>
-          </tbody>
-      </table>
     
+       <% if (workout.comments.length) { %>
+        <table>
+          <thead>
+            <tr>
+              <th>User</th>
+              <th>Comment</th>
+              <th>Date</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% workout.comments.forEach(function(c) { %>
+              <tr>
+                <td class="comment-user"><img alt="avatar" src="<%= c.userAvatar %>" referrerpolicy="no-referrer" ><%= c.userName %></td>
+                <td><%= c.content %></td>
+                <td><%= c.createdAt.toLocaleDateString() %></td>
+                <td>
+                  <% if (user && user._id.equals(c.user)) { %>
+                    <form class="comment-user" action="/comments/<%= c._id %>?_method=DELETE" method="POST">
+                      <button id="x" type="submit">X</button>
+                    </form>
+                    <br>
+                    <form class="comment-user" action="/comments/<%= c._id %>?_method=PUT" method="POST">
+                      <input name="text" value="<%= c.text %>">
+                      <button id="buttonD" type="submit">Edit Comment</button>
+                    </form>
+                  <% } %>
+                </td>
+              </tr>
+            <% }); %>
+            </tbody>
+        </table>
     <% } else { %>
       <h5>No Comments Yet</h5>
     <% } %>
