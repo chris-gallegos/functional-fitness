@@ -92,7 +92,7 @@
 }
 
 .item:hover {
-  transform: scale(1.5); 
+  transform: scale(1.2); 
 }
 
 #showing{
@@ -111,6 +111,7 @@
 }
 
 #show-page img{
+  margin-top: -100px;
   object-fit: contain;
 }
 
@@ -128,3 +129,35 @@ img {
   text-align: center;
   font-size: 40px;
 }
+
+/* show page styling  */
+.name {
+  color: white;
+  text-align: center;
+  font-size: 40px;
+}
+
+.about {
+  color: white;
+  font-size: 30px;
+  margin-top: -75px;
+  margin-bottom: 10px;
+}
+
+.plan {
+  color: white;
+  font-size: 30px;
+  margin: 10px;
+}
+
+.diff {
+  color: white;
+  font-size: 30px;
+  margin: 10px;
+}
+
+.diff2 {
+text-transform: uppercase;
+margin-bottom: -20px;
+}
+

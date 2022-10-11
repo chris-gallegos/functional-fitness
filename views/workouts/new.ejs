@@ -1,0 +1,27 @@
+<%- include('../partials/header') %>
+
+<div id="showing">
+ <form id="new-form" action="/workouts" method="POST">
+     <label>Workout Title:</label>
+     <input type="text" name="title">
+     <br>
+     <label>Workout Image URL:</label>
+     <input type="url" name="url">
+     <br>
+     <label>About Workout</label>
+     <input type="text" name="about">
+     <br>
+     <label>Workout Details:</label>
+     <input type="text" name="workoutDetails">
+     <br>
+     <label>Difficulty Level
+         <select name="difficulyLevel">
+             <option value="easy">EASY</option>
+             <option value="medium">MEDIUM</option>
+             <option value="hard">HARD</option>
+         </select>
+     </label><br>
+     <input type="submit" value="Add Workout">
+   </form>
+</div>
+  <%- include('../partials/footer') %>
