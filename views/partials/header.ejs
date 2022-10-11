@@ -8,13 +8,15 @@
   <title>Functional Fitness</title>
 </head>
 <body>
-  <nav>
-    <% if (user) { %>
-       <a href="/logout">LOG OUT</a>
-       <% } else { %>
-        <a href="/auth/google" class="login">Sign up&nbsp;</a>
-        <a href="/auth/google" class="login">Log in&nbsp;</a>
-        <% } %>
-
-  </nav>
+ <div class="banner">
+     <div class="navbar">
+         <ul>
+           <% if (user) { %>
+           <li><a href="/logout">LOG OUT</a></li>
+           <% } else { %>
+           <li><a href="/auth/google" class="login">Sign up&nbsp;</a></li>
+           <li><a href="/auth/google" class="login">Log in&nbsp;</a></li>
+           <% } %>
+         </ul>
+      </div>
   

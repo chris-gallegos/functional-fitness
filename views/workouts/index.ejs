@@ -1,19 +1,22 @@
 <%- include('../partials/header') %>
 
-<h1>Explore all Workouts!</h1>
+ <h1 class="explore">Explore all Workouts!</h1>
+ <div id="workouts-grid">
+   <table>
+       <% workouts.forEach(function(w) { %>
+         <a href="/workouts/<%= w._id %>" class="cursor-link animsition-link tipped" %>">
+          <div class="item">
+              <img src="<%= w.url %>" width="100%" height="100%" alt="">
+              <div><%= w.title %></div>
+           </div>
+         </a>
 
-<table>
-     <% workouts.forEach(function(w) { %>
-       <tr>
-         <td><%= w.title %></td>
-         <td><img src="<%= w.url %>" width="30%" height="20%"></td>
-         <td><%= w.about %></td>
-         <td><a href="/workouts/<%= w._id %>">More info</a></td>
-       </tr>
-       <% }) %>
-   </tbody>
- </table>
 
+
+         <% }) %>
+     </tbody>
+   </table>
+  </div>
 </div>
 
 <%- include('../partials/footer') %>

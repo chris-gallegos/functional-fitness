@@ -1,63 +1,63 @@
 <%- include('../partials/header') %>
-
-<section id="show-page">
-    <div>Workout Name </div>
-    <div><%= workout.title %></div>
-    <div><img src="<%= workout.url %>" width="40%" height="30%"></div>
-    <div>About: </div>
-    <div><%= workout.about %></div>
-    <div>The Workout Plan: </div>
-    <div><%= workout.workoutDetails %></div>
-    <div>Difficulty: </div>
-    <div><%= workout.difficulyLevel%></div>
-</section>
-
-<br><br>
-<h2>Comments</h2>
+<div id="showing">
+  <section id="show-page">
+      <div>Workout Name </div>
+      <div><%= workout.title %></div>
+      <div><img src="<%= workout.url %>" ></div>
+      <div>About: </div>
+      <div><%= workout.about %></div>
+      <div>The Workout Plan: </div>
+      <div><%= workout.workoutDetails %></div>
+      <div>Difficulty: </div>
+      <div><%= workout.difficulyLevel%></div>
+  </section>
   
-<% if(user) { %>
-  <form id="add-comment-form" method="POST" action="/workouts/<%= workout._id %>/comments">
-    <label>Comment:</label>
-    <textarea name="content"></textarea>
-    <input type="submit" value="Add Comment">
-  </form>
-<% } %>
-  
-<% if (workout.comments.length) { %>
-  <table>
-    <thead>
-      <tr>
-        <th>User</th>
-        <th>Comment</th>
-        <th>Date</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% workout.comments.forEach(function(c) { %>
+  <br><br>
+  <h2>Comments</h2>
+    
+  <% if(user) { %>
+    <form id="add-comment-form" method="POST" action="/workouts/<%= workout._id %>/comments">
+      <label>Comment:</label>
+      <textarea name="content"></textarea>
+      <input type="submit" value="Add Comment">
+    </form>
+  <% } %>
+    
+  <% if (workout.comments.length) { %>
+    <table>
+      <thead>
         <tr>
-          <td class="comment-user"><img alt="avatar" src="<%= c.userAvatar %>" referrerpolicy="no-referrer" ><%= c.userName %></td>
-          <td><%= c.content %></td>
-          <td><%= c.createdAt.toLocaleDateString() %></td>
-          <td>
-            <% if (user && user._id.equals(c.user)) { %>
-              <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
-                <button type="submit">X</button>
-              </form>
-              <br>
-              <form action="/comments/<%= c._id %>?_method=PUT" method="POST">
-                <input name="text" value="<%= c.text %>">
-                <button type="submit">Edit Comment</button>
-              </form>
-            <% } %>
-          </td>
+          <th>User</th>
+          <th>Comment</th>
+          <th>Date</th>
+          <th></th>
         </tr>
-      <% }); %>
-      </tbody>
-  </table>
-
-<% } else { %>
-  <h5>No Comments Yet</h5>
-<% } %>
-
+      </thead>
+      <tbody>
+        <% workout.comments.forEach(function(c) { %>
+          <tr>
+            <td class="comment-user"><img alt="avatar" src="<%= c.userAvatar %>" referrerpolicy="no-referrer" ><%= c.userName %></td>
+            <td><%= c.content %></td>
+            <td><%= c.createdAt.toLocaleDateString() %></td>
+            <td>
+              <% if (user && user._id.equals(c.user)) { %>
+                <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
+                  <button type="submit">X</button>
+                </form>
+                <br>
+                <form action="/comments/<%= c._id %>?_method=PUT" method="POST">
+                  <input name="text" value="<%= c.text %>">
+                  <button type="submit">Edit Comment</button>
+                </form>
+              <% } %>
+            </td>
+          </tr>
+        <% }); %>
+        </tbody>
+    </table>
+  
+  <% } else { %>
+    <h5>No Comments Yet</h5>
+  <% } %>
+</div>
 <%- include('../partials/footer') %>
