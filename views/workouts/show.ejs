@@ -13,12 +13,11 @@
   </section>
   
   <br><br>
+  <h2>Comments</h2>
   <div class="comment-container">
-    <h2>Comments</h2>
-      
     <% if(user) { %>
       <form id="add-comment-form" method="POST" action="/workouts/<%= workout._id %>/comments">
-        <label>Comment:</label>
+        
         <textarea name="content"></textarea>
         <input id="buttonD" type="submit" value="Add Comment">
       </form>
@@ -38,18 +37,20 @@
             <% workout.comments.forEach(function(c) { %>
               <tr>
                 <td class="comment-user"><img alt="avatar" src="<%= c.userAvatar %>" referrerpolicy="no-referrer" ><%= c.userName %></td>
-                <td><%= c.content %></td>
+                <td class="comment-length"><%= c.content %></td>
                 <td><%= c.createdAt.toLocaleDateString() %></td>
                 <td>
                   <% if (user && user._id.equals(c.user)) { %>
-                    <form class="comment-user" action="/comments/<%= c._id %>?_method=DELETE" method="POST">
-                      <button id="x" type="submit">X</button>
-                    </form>
-                    <br>
-                    <form class="comment-user" action="/comments/<%= c._id %>?_method=PUT" method="POST">
-                      <input name="text" value="<%= c.text %>">
-                      <button id="buttonD" type="submit">Edit Comment</button>
-                    </form>
+                    <div class="comment-user">
+                      <br>
+                      <form action="/comments/<%= c._id %>?_method=PUT" method="POST">
+                        <input id="edit"name="text" value="<%= c.text %>">
+                        <button id="buttonD" type="submit">Edit Comment</button>
+                      </form>
+                      <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
+                        <button id="x" type="submit">X</button>
+                      </form>
+                    </div>
                   <% } %>
                 </td>
               </tr>

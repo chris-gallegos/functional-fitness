@@ -4,6 +4,7 @@
   font-family: sans-serif;
 }
 
+ /* Nav styling  */
 .banner {
   width: 100%;
   height: 100vh;
@@ -50,7 +51,7 @@
   width: 100%;
 }
 
-/* home page styling */
+/* Home Page Styling */
 
 .content {
   width: 100%;
@@ -73,6 +74,7 @@
   line-height: 25px;
 }
 
+/* Index Page Styling  */
 #workouts-grid {
   max-width: 1500px;
   margin: 0 auto;
@@ -146,7 +148,7 @@ img {
   font-size: 40px;
 }
 
-/* show page styling  */
+/* Show Page Styling  */
 #showing {
   color: white;
   display: flex;
@@ -192,12 +194,16 @@ margin-bottom: -20px;
 
 .comment-container {
   margin-bottom: 30px;
+  max-width: 60vw;
 }
 
 #add-comment-form {
-  display: grid;
-  grid-template-columns: auto auto;
-  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
 }
 
 #add-comment-form input[type="submit"] {
@@ -208,6 +214,7 @@ margin-bottom: -20px;
 
 .comment-user {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
 }
@@ -218,6 +225,10 @@ margin-bottom: -20px;
   margin: 10px;
 }
 td {
+  margin: 10px;
+}
+
+#edit {
   margin: 10px;
 }
 
@@ -236,6 +247,7 @@ td {
   overflow: hidden;
   z-index: 0.5;
   transition: 0.5s;
+  margin: 10px;
 }
 
 
@@ -256,15 +268,20 @@ td {
   overflow: hidden;
   z-index: 0.5;
   transition: 0.5s;
-  margin-left: 200px;
+  margin: 15px;
 }
 
 #x:hover {
   color: red;
 }
 
+.comment-length {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
 
-/* Add workout page  */
+/* Add Workout Page  */
 
 #new-form {
   color: white;
@@ -275,3 +292,6 @@ td {
   align-items: center;
   gap: 10px;
 }
+
+
+
