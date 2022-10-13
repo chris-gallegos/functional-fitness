@@ -37,4 +37,4 @@ Node.js | Express |  MongoDB | Mongoose | EJS | HTML | CSS
 
 Future features for functional fitness include:
 - Feature for a user to view their added workouts in a user "Profile" page. 
-- Feature to a user to delete their added workouts. 
+- Feature for a user to delete their added workouts. 
