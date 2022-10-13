@@ -10,7 +10,7 @@ Functional Fitness is a full-stack application that enables users to post, view,
 
 ## Application Demo
 
-### Click <a href="https://chris-gallegos.github.io/hangman-game/" target="_blank">here</a> to use the application!
+### Click <a href="https://functional-fitness.onrender.com/" target="_blank">here</a> to use the application!
 
 ### Home Page:
 
