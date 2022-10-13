@@ -9,7 +9,7 @@ Functional Fitness is a full-stack application that enables users to post, view,
 - Implemented Authentication using OAth to provide a smooth sign-in experience for the user using their Google account. 
 
 ## Application Demo
-
+Testing
 
 ## Technologies 
 
