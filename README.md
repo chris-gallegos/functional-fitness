@@ -20,11 +20,11 @@ Functional Fitness is a full-stack application that enables users to post, view,
 
 ![Show](https://user-images.githubusercontent.com/100250662/195671611-4d111721-131e-462a-8fe4-5e9c9e8facee.gif)
 
-### Comments
+### Comments:
 
 ![Comment](https://user-images.githubusercontent.com/100250662/195671670-77e95e67-1669-4c6c-950a-8be0f78d6b79.gif)
 
-### Add Workout
+### Add Workout:
 
 ![Add](https://user-images.githubusercontent.com/100250662/195671741-33a010fb-e52c-4474-a967-13d9a2174892.gif)
 
