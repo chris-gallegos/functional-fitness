@@ -1,5 +1,4 @@
-const workout = require('../models/workout');
-const Workout = require('../models/workout');
+const Workout = require('../models/workout')
 
 module.exports = {
     create,
@@ -34,19 +33,19 @@ function deleteComment(req, res, next) {
 
 function edit(req, res) {
     Workout.findOne({'comments._id': req.params.id}, function(err, workout) {
-      const comment = workout.comments.id(req.params.id);
-      res.render('comments/edit', {comment});
-    });
+      const comment = workout.comments.id(req.params.id)
+      res.render('comments/edit', {comment})
+    })
 }
   
 function update(req, res) {
     Workout.findOne({'comments._id': req.params.id}, function(err, workout) {
-     const commentSubdoc = workout.comments.id(req.params.id); 
+     const commentSubdoc = workout.comments.id(req.params.id)
      if (!commentSubdoc.user.equals(req.user._id) ) 
-     return res.redirect(`/workouts/${workout._id}`);
+     return res.redirect(`/workouts/${workout._id}`)
      commentSubdoc.content = req.body.text
      workout.save(function(err) {
-      res.redirect(`/workouts/${workout._id}`);
-    });
-  });
+      res.redirect(`/workouts/${workout._id}`)
+    })
+  })
 }

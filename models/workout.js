@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
-require('mongoose-type-url');
-// optional shortcut variable
+
 const Schema = mongoose.Schema;
 
 

@@ -1,4 +1,4 @@
-var Workout = require('../models/workout');
+var Workout = require('../models/workout')
 
 module.exports = {
     index,
@@ -11,9 +11,8 @@ module.exports = {
 function index(req, res) {
     Workout.find({}, function(err, workouts) {
         console.log(workouts)
-      res.render('workouts/index', { workouts });
-    });
-    
+      res.render('workouts/index', { workouts })
+    })
 }
 
 function show(req, res){
@@ -24,13 +23,13 @@ function show(req, res){
 }
 
 function newWorkout(req, res){
-    res.render('workouts/new');
+    res.render('workouts/new')
 }
 
 function create(req, res) {
-    const workout = new Workout(req.body);
+    const workout = new Workout(req.body)
     workout.save(function(err) {
-      if (err) return res.redirect('/workouts/new');
-      res.redirect(`/workouts/${workout._id}`);
-    });
-  }
+      if (err) return res.redirect('/workouts/new')
+      res.redirect(`/workouts/${workout._id}`)
+    })
+}
